@@ -1,0 +1,52 @@
+Link for Oracle DB get first n rows, and get rows between m to n, m<=n with setting offset :
+
+http://www.dba-oracle.com/t_offset_fet_first_rows_only.htm
+
+
+select . . . . order by x fetch first 10 rows only:  This will display the first rows of the table, in the order that was specified in the order by clause.
+
+select . . . order by x offset 20 fetch first 10 rows only:  This will offset into the table (in sorted order) and then fetch the next 10 rows of the table.
+Consider these examples of :
+
+-- ************************
+-- fetch first 5 rows, 
+-- ordered by ename
+-- ************************
+
+select 
+   ename 
+from 
+   emp 
+order by ename 
+fetch first 5 rows only;
+ 
+ENAME
+----------
+ADAMS
+ALLEN
+BLAKE
+CLARK
+FORD
+ 
+
+-- ************************
+-- fetch next 5 rows,
+-- start a 5th sorted row 
+-- ordered by ename
+-- ************************
+
+select 
+   ename 
+from 
+   emp 
+order by ename 
+offset 5 rows 
+fetch next 5 rows only;
+ 
+ENAME
+----------
+JAMES
+JONES
+KING
+MARTIN
+MILLER
