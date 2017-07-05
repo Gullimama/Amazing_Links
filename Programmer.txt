@@ -1,0 +1,36 @@
+Programming Languages to Learn :
+
+C
+Java
+Python
+JavaScript
+Perl
+
+Method to Learn a Programming Language :
+
+Solve core programming problems : Visit Sites Online and do competitive programming
+Read And Review Codes : Read a lot of code and absorb the coding styles
+Build New Things : Build new things that are missing in the real world
+Coding Practices : Learn about out of the box programming concepts and very innovative books
+
+Apart from the above : 
+
+Learn the core concepts of Computer Science
+Build Things from scratch
+Learn the newer tools in market
+Read tech magazines which are very important
+Read 1 RFC in a month
+
+Learning Programming and Computer Science is all about reading great books. They are everywhere just start and stop not until the last page is turned.
+
+
+Method I will follow : 
+
+Catch a book and complete it till the end.
+Pick a programming problem every week. Avoid rabbit hole problems
+
+
+Research for the Month of July : 
+1] Programming book of the week : SPA's - Single Page Applications
+2] Website Developer
+3] Operating Systems - Text book by Silberchatz
