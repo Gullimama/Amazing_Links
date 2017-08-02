@@ -1,0 +1,9 @@
+How to start eclipse with different version of java
+
+https://stackoverflow.com/questions/15092212/how-to-start-eclipse-with-different-version-of-java
+
+You can add the -vm option to eclipse.ini:
+
+-vm
+C:/path/java/jdk1.7.0_03/bin/javaw.exe
+It has to be on 2 separate lines and it has to be added before -vmargs.
