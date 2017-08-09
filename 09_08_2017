@@ -1,0 +1,11 @@
+Link to change default eclipse startup workspace
+
+https://stackoverflow.com/questions/9579184/how-to-change-the-default-eclipse-startup-workspace
+
+
+In the path
+
+eclipse\configuration\.settings\org.eclipse.ui.ide.prefs
+Change the Order of workspace here
+
+RECENT_WORKSPACES=F\:\\new workspace\nF\:\\worksapce
