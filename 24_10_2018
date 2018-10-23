@@ -1,0 +1,21 @@
+https://stackoverflow.com/questions/36730316/what-login-name-to-use-for-spring-ldap-authentication
+
+@Configuration
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder authBuilder) throws Exception {
+        authBuilder
+            .ldapAuthentication()
+            .userSearchFilter("(sAMAccountName={0})")
+            .userSearchBase("dc=some,dc=domain,dc=com")
+            .groupSearchBase("ou=groups,dc=some,dc=domain,dc=com")
+            .groupSearchFilter("member={0}")
+            .contextSource()
+                .url("ldaps://<ldap-server>")
+                .port(639)
+                .managerDn("cn=binduser,ou=users,dc=some,dc=domain,dc=com")
+                .managerPassword("some pass")
+        ;
+    }
+}
