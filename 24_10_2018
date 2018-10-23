@@ -19,3 +19,35 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         ;
     }
 }
+
+
+for multiple  LDAP's: 
+
+@Autowired
+public void configureGlobal(AuthenticationManagerBuilder authBuilder) throws Exception {
+    authBuilder
+        .ldapAuthentication()
+        .userSearchFilter("(sAMAccountName={0})")
+        .userSearchBase("dc=emea,dc=domain,dc=com")
+        .groupSearchBase("ou=groups,dc=emea,dc=domain,dc=com")
+        .groupSearchFilter("member={0}")
+        .contextSource()
+            .url("ldaps://<emea-ldap-server>")
+            .port(639)
+            .managerDn("cn=binduser,ou=users,dc=emea,dc=domain,dc=com")
+            .managerPassword("some pass")
+        .and()
+        .and()
+        .ldapAuthentication()
+        .userSearchFilter("(sAMAccountName={0})")
+        .userSearchBase("dc=ap,dc=domain,dc=com")
+        .groupSearchBase("ou=groups,dc=ap,dc=domain,dc=com")
+        .groupSearchFilter("member={0}")
+        .contextSource()
+            .url("ldaps://<ap-ldap-server>")
+            .port(639)
+            .managerDn("cn=binduser,ou=users,dc=ap,dc=domain,dc=com")
+            .managerPassword("some pass")
+
+    ;
+}
